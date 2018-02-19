@@ -2,12 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
 import { PopoverPage } from '../popover/popover';
-/**
- * Generated class for the ItemonePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
+import { ProductProvider } from '../../providers/product/product';
 
 @IonicPage()
 @Component({
@@ -18,9 +14,11 @@ import { PopoverPage } from '../popover/popover';
 
 export class ItemonePage {
   selectedData:any;
+  data:any;
   constructor(public navCtrl: NavController, 
   	public navParams: NavParams, 
-  	public popoverCtrl: PopoverController) {
+  	public popoverCtrl: PopoverController,
+    private ProductProvider: ProductProvider) {
   }
   ionViewDidLoad() {
     // console.log('ionViewDidLoad ItemonePage');
@@ -39,6 +37,11 @@ export class ItemonePage {
         this.selectedData = "DESTINATION"
       }
       console.log(this.selectedData)
+    });
+  }
+  ionViewWillEnter(){
+    this.ProductProvider.getProductList().subscribe(data => {
+      this.data = data
     });
   }
 }

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -15,6 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimationService, AnimatesDirective } from 'css-animator';
+import { ProductProvider } from '../providers/product/product';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { AnimationService, AnimatesDirective } from 'css-animator';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     BrowserAnimationsModule,
   ],
@@ -46,7 +49,8 @@ import { AnimationService, AnimatesDirective } from 'css-animator';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AnimationService
+    AnimationService,
+    ProductProvider
   ]
 })
 export class AppModule {}

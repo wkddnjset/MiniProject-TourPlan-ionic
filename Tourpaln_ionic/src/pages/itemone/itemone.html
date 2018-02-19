@@ -21,10 +21,10 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-<ion-slides>
+<!-- <ion-slides>
 
   <ion-slide class="slide-background">
-    <img class="slide-img" src="https://raw.githubusercontent.com/wkddnjset/MiniProject-TourPlan-ionic/master/src/assets/icon/producr-img.png">
+    <img class="slide-img" src="assets/icon/producr-img.png">
     <div class="slide-card">
       <h2 class="slide-title">Seoul, Korea</h2>
       <p class="slide-subtitle">The National Palace Museum of Korea is 
@@ -35,7 +35,7 @@ located south of Heungnyemun Gate.</p>
     </div>
   </ion-slide>
   <ion-slide class="slide-background">
-    <img class="slide-img" src="https://raw.githubusercontent.com/wkddnjset/MiniProject-TourPlan-ionic/master/src/assets/icon/producr-img.png">
+    <img class="slide-img" src="assets/icon/producr-img.png">
     <div class="slide-card">
       <h2 class="slide-title">Seoul, Korea</h2>
       <p class="slide-subtitle">The National Palace Museum of Korea is 
@@ -46,6 +46,18 @@ located south of Heungnyemun Gate.</p>
     </div>
   </ion-slide>
 
-</ion-slides>
+</ion-slides> -->
 
+<!-- <ion-slides >
+  <ion-slide class="slide-background"  *ngFor = "let product of data">
+    <img class="slide-img" src="{{ product.img_url }}">
+    <div class="slide-card">
+      <h2 class="slide-title">{{ product.title }}</h2>
+      <p class="slide-subtitle">{{ product.sub_title }}</p>
+      <button class="tag-icon">
+          <ion-icon name="tag-icon"></ion-icon>
+      </button>
+    </div>
+  </ion-slide>
+</ion-slides> -->
 </ion-content>
